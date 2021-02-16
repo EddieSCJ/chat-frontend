@@ -1,8 +1,14 @@
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
 const App = () => {
   return (
-    <div>
-      Hello World
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path={"/"}>
+          Hello World
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
