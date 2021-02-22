@@ -11,7 +11,7 @@ const StarterPage = () => {
   }
 
   const renderChat = () => {
-    localStorage.setItem('messageList', JSON.stringify([{username: "BOT", message: "Put your first message here"}]))
+    localStorage.setItem('messageList', JSON.stringify([{username: "BOT", message: "Just send a message to start a conversartion"}]))
     history.push('/chat');
   }
 
