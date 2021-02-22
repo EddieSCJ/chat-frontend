@@ -1,4 +1,4 @@
-.name-input-group {
+.input-group {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -6,10 +6,10 @@
     align-items: center;
 }
 
-.name-input-bar {
+.input-bar {
     width: 40%;
 }
 
-.name-input-button {
+.input-button {
     padding: 11px !important;
 }

@@ -1,0 +1,12 @@
+.container {
+    padding: 20px;
+    background-color: #efefef;
+    height: 400px;
+    width: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.input-bar {
+    width: 575px;
+}
