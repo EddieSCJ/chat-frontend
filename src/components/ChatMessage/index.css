@@ -1,0 +1,22 @@
+.username {
+    font-size: .6em;
+    color: #00879f;
+}
+
+.message-odd {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: .6em;
+    background-color: #f50057;
+    color: white;
+}
+
+.message-even {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 6px;
+    font-size: .6em;
+    background-color: #ffffff;
+    color: #000000;
+}

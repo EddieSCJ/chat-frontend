@@ -1,5 +1,6 @@
 import "./index.css";
 import NameInputBar from "../../components/NameInputBar/";
+import ChatMessage from "./../../components/ChatMessage/";
 
 const StarterPage = () => {
 
@@ -7,8 +8,9 @@ const StarterPage = () => {
     setUsername(username);
   }
 
-  const send = () => {
-    console.log('sent')
+  const send = (username, renderChat) => {
+    localStorage.setItem('username', username);
+    renderChat();
   }
 
   return (
