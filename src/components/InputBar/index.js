@@ -4,15 +4,15 @@ import "./index.css";
 import {useState} from "react";
 
 const InputBar = (props) => {
-  const [username, setUsername] = useState('');
+  const [value, setValue] = useState('');
   return (
     <div className={"input-group"}>
-      <TextField value={username} className={"input-bar"} size={"small"} label={props.label}
+      <TextField value={value} className={"input-bar"} size={"small"} label={props.label}
                  placeholder={props.placeholder} variant={"filled"}
-                 onChange={(e) => setUsername(e.target.value)}/>
+                 onChange={(e) => setValue(e.target.value)}/>
 
       <Button className={"input-button"} variant={"contained"} color={"secondary"} size={"large"}
-              onClick={() => props.send(username)}>Send</Button>
+              onClick={() => props.send(value)}>Send</Button>
     </div>
   )
 }

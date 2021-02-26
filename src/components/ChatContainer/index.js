@@ -3,6 +3,7 @@ import './index.css';
 import ChatMessage from './../ChatMessage/';
 import Header from './../Header/';
 import InputBar from './../InputBar/'
+import MessageService from '../../services/messageService';
 
 const ChatContainer = (props) => {
   const [messageList, setMessageList] = useState((JSON.parse(localStorage.getItem('messageList'))));
@@ -17,11 +18,10 @@ const ChatContainer = (props) => {
         })}
       </div>
       <InputBar className={"input-bar"} label="Message" placeholder="Enter your message here"
-                send={() => {
-                  let tmpMessageList = [...JSON.parse(localStorage.getItem('messageList'))];
-                  tmpMessageList.push({ username: "eddie", message: "aaaaaaa" });
-                  localStorage.setItem('messageList', JSON.stringify(tmpMessageList));
-                  setMessageList(tmpMessageList);
+                send={(value) => {
+                  const username = localStorage.getItem('username');
+                  MessageService.send(username, value)
+
                 }}/>
     </div>
   )
