@@ -20,4 +20,4 @@ const messageService = () => {
   }
 }
 
-module.exports = messageService();
+export default messageService();

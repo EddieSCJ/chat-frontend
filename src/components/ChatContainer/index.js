@@ -4,9 +4,22 @@ import ChatMessage from './../ChatMessage/';
 import Header from './../Header/';
 import InputBar from './../InputBar/'
 import MessageService from '../../services/messageService';
+import socketIOService from "../../services/socketIOService";
+
+let receiveMessages = () => {};
+
+socketIOService.getSocket().on('message', socket => {
+  receiveMessages(socket)
+});
 
 const ChatContainer = (props) => {
   const [messageList, setMessageList] = useState((JSON.parse(localStorage.getItem('messageList'))));
+  receiveMessages = (value) => {
+    let tmpMessageList = [...JSON.parse(localStorage.getItem('messageList'))];
+    tmpMessageList.push(value);
+    localStorage.setItem('messageList', JSON.stringify(tmpMessageList));
+    setMessageList(tmpMessageList);
+  }
 
   return (
     <div>
@@ -20,8 +33,7 @@ const ChatContainer = (props) => {
       <InputBar className={"input-bar"} label="Message" placeholder="Enter your message here"
                 send={(value) => {
                   const username = localStorage.getItem('username');
-                  MessageService.send(username, value)
-
+                  MessageService.send(username, value);
                 }}/>
     </div>
   )

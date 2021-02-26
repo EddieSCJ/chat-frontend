@@ -2,10 +2,12 @@ import "./index.css";
 import InputBar from "../../components/InputBar/";
 import React from "react";
 import { useHistory } from 'react-router-dom';
+import socketIOService from "../../services/socketIOService";
 
 const StarterPage = () => {
-  let history = useHistory();
 
+  socketIOService.connection();
+  let history = useHistory();
   const change = (username, setUsername) => {
     setUsername(username);
   }
