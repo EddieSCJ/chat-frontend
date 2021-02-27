@@ -1,0 +1,15 @@
+.input-group {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-bar {
+    width: 40%;
+}
+
+.input-button {
+    padding: 11px !important;
+}

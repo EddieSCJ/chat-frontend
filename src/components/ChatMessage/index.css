@@ -1,0 +1,42 @@
+.username {
+    font-size: .8em;
+    color: #00879f;
+}
+
+.message-odd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 4px;
+
+    height: 20px;
+    max-width: 600px;
+    width: 160px;
+    word-wrap: break-word;
+
+    padding: 4px;
+    border-radius: 6px;
+    font-size: .7em;
+    background-color: #f50057;
+    color: white;
+}
+
+.message-even {
+    text-align: center;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 20px;
+    max-width: 600px;
+    width: 160px;
+    word-wrap: break-word;
+
+    padding: 4px;
+    border-radius: 6px;
+    font-size: .7em;
+    background-color: #ffffff;
+    color: #000000;
+}
