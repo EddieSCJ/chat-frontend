@@ -1,13 +1,18 @@
 import "./index.css";
 import InputBar from "../../components/InputBar/";
-import React from "react";
+import React, {useEffect} from "react";
 import { useHistory } from 'react-router-dom';
 import socketIOService from "../../services/socketIOService";
 
 const StarterPage = () => {
-
   socketIOService.connection();
   let history = useHistory();
+
+  useEffect(() => {
+    const username = localStorage.getItem('username');
+    if(username) history.push('/chat')
+  })
+
   const change = (username, setUsername) => {
     setUsername(username);
   }

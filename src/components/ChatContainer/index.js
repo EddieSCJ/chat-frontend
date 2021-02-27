@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './index.css';
 import ChatMessage from './../ChatMessage/';
 import Header from './../Header/';
 import InputBar from './../InputBar/'
 import MessageService from '../../services/messageService';
 import socketIOService from "../../services/socketIOService";
+import {useHistory} from "react-router-dom";
 
 let receiveMessages = () => {};
 
@@ -13,6 +14,8 @@ socketIOService.getSocket().on('message', socket => {
 });
 
 const ChatContainer = (props) => {
+
+
   const [messageList, setMessageList] = useState((JSON.parse(localStorage.getItem('messageList'))));
   receiveMessages = (value) => {
     let tmpMessageList = [...JSON.parse(localStorage.getItem('messageList'))];
